@@ -1,0 +1,14 @@
+.card-item {
+  background-color: aquamarine;
+  width: fit-content;
+  border-radius: 5%;
+  padding: 1em;
+  margin: 1em 0;
+  border: solid 1px blue;
+  cursor: pointer;
+}
+
+.card-item:hover {
+  transition: all 0.2s linear;
+  transform: scale(1.02);
+}
