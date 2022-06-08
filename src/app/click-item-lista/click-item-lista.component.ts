@@ -40,4 +40,7 @@ export class ClickItemListaComponent implements OnInit {
       amount: 1,
     },
   ];
+  onClickedItem(dato: Product) {
+    console.log(dato);
+  }
 }

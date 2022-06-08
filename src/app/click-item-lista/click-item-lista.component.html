@@ -1,4 +1,9 @@
 <h2>Click su item della lista</h2>
 <div class="d-flex justify-content-center flex-wrap">
-  <app-item *ngFor="let item of products" [product]="item"></app-item>
+  <app-item
+    *ngFor="let item of products"
+    [product]="item"
+    (clickedItem)="onClickedItem(item)"
+  ></app-item>
 </div>
+<app-item-detail></app-item-detail>
