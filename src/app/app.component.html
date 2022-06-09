@@ -1,4 +1,12 @@
 <div class="container">
   <h1 class="text-center bg-warning py-3">Angular Examples</h1>
-  <app-click-item-lista></app-click-item-lista>
+
+  <div>
+  <app-click-item-lista
+    (clickedItemData)="onRecivedClickedProduct($event)"
+  ></app-click-item-lista>
+  <div *ngIf="clickedProduct">
+    <app-item-detail [productData]="clickedProduct"></app-item-detail>
+  </div>
+  </div>
 </div>
