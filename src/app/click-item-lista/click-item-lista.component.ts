@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from './shared/product.model';
 
 @Component({
@@ -8,6 +8,9 @@ import { Product } from './shared/product.model';
 })
 export class ClickItemListaComponent implements OnInit {
   products: Product[];
+  localClicked: Product;
+  @Input() title: string;
+  @Input() show: boolean = false;
   @Output() clickedItemData = new EventEmitter<Product>();
   constructor() {
     this.products = [
@@ -46,5 +49,6 @@ export class ClickItemListaComponent implements OnInit {
 
   onClickedItem(dato: Product) {
     this.clickedItemData.emit(dato);
+    this.localClicked = dato;
   }
 }

@@ -1,8 +1,15 @@
-<h2>Click su item della lista</h2>
-<div class="d-flex justify-content-center flex-wrap">
-  <app-item
-    *ngFor="let item of products"
-    [product]="item"
-    (clickedItem)="onClickedItem(item)"
-  ></app-item>
+<div class="list-container">
+  <h2 class="text-center">{{ title }}</h2>
+  <div class="d-flex justify-content-center flex-wrap">
+    <app-item
+      *ngFor="let item of products"
+      [product]="item"
+      (clickedItem)="onClickedItem(item)"
+    ></app-item>
+  </div>
+  <div *ngIf="show">
+    <div *ngIf="localClicked">
+      <app-item-detail [productData]="localClicked"></app-item-detail>
+    </div>
+  </div>
 </div>

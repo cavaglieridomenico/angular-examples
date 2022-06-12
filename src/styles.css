@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+.item-detail {
+  min-height: 100px;
+  background-color: rgba(0, 255, 255, 0.192);
+}
