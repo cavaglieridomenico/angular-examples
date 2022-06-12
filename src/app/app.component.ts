@@ -10,7 +10,6 @@ export class AppComponent {
   title = 'angular-examples';
   clickedProduct: Product;
   onRecivedClickedProduct(data: Product) {
-    console.log(data);
     this.clickedProduct = data;
   }
 }

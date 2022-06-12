@@ -1,12 +1,35 @@
 <div class="container">
   <h1 class="text-center bg-warning py-3">Angular Examples</h1>
 
-  <div>
-  <app-click-item-lista
-    (clickedItemData)="onRecivedClickedProduct($event)"
-  ></app-click-item-lista>
-  <div *ngIf="clickedProduct">
-    <app-item-detail [productData]="clickedProduct"></app-item-detail>
+  <div class="block-version">
+    <app-click-item-lista
+      [title]="'Click senza id (short version contratta)'"
+      (clickedItemData)="clickedProduct = $event"
+      [show]="true"
+    ></app-click-item-lista>
   </div>
+
+  <div class="block-version">
+    <app-click-item-lista
+      [title]="'Click senza id (long version contratta)'"
+      (clickedItemData)="clickedProduct = $event"
+    ></app-click-item-lista>
+    <div class="item-detail">
+      <div *ngIf="clickedProduct">
+        <app-item-detail [productData]="clickedProduct"></app-item-detail>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-version">
+    <app-click-item-lista
+      [title]="'Click senza id (long version)'"
+      (clickedItemData)="onRecivedClickedProduct($event)"
+    ></app-click-item-lista>
+    <div class="item-detail">
+      <div *ngIf="clickedProduct">
+        <app-item-detail [productData]="clickedProduct"></app-item-detail>
+      </div>
+    </div>
   </div>
 </div>
